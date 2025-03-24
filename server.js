@@ -7,7 +7,7 @@ const { mergePdfs } = require('./merge');
 
 const app = express();
 const upload = multer({ dest: 'uploads/' });
-const port = 3000;
+const port = process.env.PORT || 3000; // Use the PORT environment variable or default to 3000
 
 const publicDir = path.join(__dirname, 'public');
 if (!fs.existsSync(publicDir)) {
